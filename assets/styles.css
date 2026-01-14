@@ -78,7 +78,10 @@ label {
 li {
   font-size: 18px;
 }
-
+.container{
+  display: flex;
+  flex-direction: row;
+}
 .nav-bar {
   background: linear-gradient(-90deg, #84cf6a, #16c0b0);
   height: 60px;
@@ -166,9 +169,6 @@ ul {
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
-    flex-direction: column;
-  }
 
   .product-image,
   .product-info {
