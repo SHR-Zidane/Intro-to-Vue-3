@@ -13,8 +13,6 @@
       <div class="product-image">
         <img v-bind:src="image">
       </div>
-      <div
-        v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color }}</div>
       <div class="text">
         <h1>{{ product }}</h1>
         <p>{{ description }}</p>
@@ -39,6 +37,7 @@
         </div>
         <div class="cart">Cart({{ cart }})</div>
         <button class="button" @click="addToCart">Add to Cart</button>
+        <button class="button" @click="removeToCart">Remove</button>
       </div>
     </div>
 
