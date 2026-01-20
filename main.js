@@ -3,15 +3,15 @@ const app = Vue.createApp({
         return{
             product: 'Socks',
 
+            brand: 'Vue Mastery',
+
             description: 'chaussettes en coton',
 
             image: './assets/images/socks_green.jpg',
 
-            inventory: 8,
+            inventory: 10,
 
             details: ['50% cotton', '30% wool', '20% polyester'],
-
-            onSale: true,
 
             variants: [
                 { id:2234, color: 'green', image: './assets/images/socks_green.jpg'},
@@ -25,18 +25,30 @@ const app = Vue.createApp({
                 {id:4, size: 'XL'}
             ],
 
-            cart: 0
+            cart: 0,
         }
     },
     methods: {
         addToCart() {
-            this.cart += 1
+            if(this.cart < this.inventory){
+                this.cart += 1
+            }
+
         },
         updateImage(variantImage) {
             this.image = variantImage
         },
         removeToCart() {
-            this.cart -= 1
+            if(this.cart > 0){
+                this.cart -= 1
+            }
+
+        }
+    },
+
+    computed: {
+        title() {
+            return this.brand + ' ' + this.product
         }
     }
 });
